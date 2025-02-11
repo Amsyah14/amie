@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <style>
         /* General Body Style */
         body {
@@ -24,9 +25,9 @@
         }
 
         th, td {
-            padding: 8px;
+            padding: 10px;
             text-align: center;
-            border: 5px solid #ddd;
+            border: 2px solid #ddd;
         }
 
         tr:hover {
@@ -34,16 +35,9 @@
         }
 
         img {
-            width: 300px;
-            height: auto;
-        }
-
-        video {
             width: 100%;
-            max-width: 500px;
+            max-width: 300px;
             height: auto;
-            display: block;
-            margin-top: 20px;
         }
 
         /* Container Style for Content */
@@ -70,6 +64,14 @@
             background-color: #f1f1f1;
             padding: 30px 0;
         }
+
+        /* Responsive Fixes */
+        @media screen and (max-width: 600px) {
+            table, th, td {
+                display: block;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -77,7 +79,9 @@
 <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+        </a>
         <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="Travelling.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TRAVELLING</a>
         <a href="Gallery.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
@@ -88,6 +92,14 @@
                 <a href="hobby.html" class="w3-bar-item w3-button">Collecting Figure</a>
             </div>
         </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="myMenu" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+        <a href="Travelling.html" class="w3-bar-item w3-button">TRAVELLING</a>
+        <a href="Gallery.html" class="w3-bar-item w3-button">GALLERY</a>
+        <a href="Contact.html" class="w3-bar-item w3-button">CONTACT</a>
+        <a href="hobby.html" class="w3-bar-item w3-button">HOBBY</a>
     </div>
 </div>
 
@@ -104,7 +116,7 @@
             </tr>
             <tr>
                 <td>Travel to Thailand</td>
-                <td><img src="Thailand.jpg" alt="Thailand"></td>
+                <td><img src="thailand.jpg" alt="Thailand"></td>
             </tr>
             <tr>
                 <td>Travel to Bali</td>
@@ -112,22 +124,20 @@
             </tr>
             <tr>
                 <td>Travel to Singapore</td>
-                <td><img src="singapore.jpg" alt="Singapore"></td>
+                <td><img src="Singapore.jpg" alt="Singapore"></td>
             </tr>
         </table>
-
-        
     </div>
 </div>
 
 <script>
-    // Hamburger Menu Function for smaller screens
+    // Function to toggle the mobile menu
     function myFunction() {
         var x = document.getElementById("myMenu");
-        if (x.className === "w3-bar-item w3-button w3-padding-large") {
-            x.className += " w3-show";
+        if (x.classList.contains("w3-show")) {
+            x.classList.remove("w3-show");
         } else {
-            x.className = "w3-bar-item w3-button w3-padding-large";
+            x.classList.add("w3-show");
         }
     }
 </script>
